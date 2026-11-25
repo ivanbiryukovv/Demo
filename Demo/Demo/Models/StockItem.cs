@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace ChudoObuv.Models;
+
+public partial class StockItem
+{
+    public int ProductId { get; set; }
+
+    public int ManufacturerId { get; set; }
+
+    public int SizeId { get; set; }
+
+    public int QuantityForOrders { get; set; }
+
+    public virtual Manufacturer Manufacturer { get; set; } = null!;
+
+    public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+
+    public virtual Product Product { get; set; } = null!;
+
+    public virtual Size Size { get; set; } = null!;
+}
